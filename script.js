@@ -1,3 +1,10 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const music = document.getElementById("bgMusic");
+
+    document.body.addEventListener("click", () => {
+        music.play().catch(console.error);
+    }, { once: true });
+});
 function nextPage() {
 
 document.querySelector(".glass").innerHTML = `
