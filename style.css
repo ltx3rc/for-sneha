@@ -536,3 +536,422 @@ text-shadow:0 0 12px rgba(255,255,255,.4);
 .footer{
 text-shadow:0 0 10px rgba(255,255,255,.4);
 }
+/* =========================
+   FLOATING ORBS
+========================= */
+
+.orb{
+position:absolute;
+border-radius:50%;
+filter:blur(8px);
+opacity:.35;
+animation:orbMove linear infinite alternate;
+}
+
+.o1{
+width:180px;
+height:180px;
+background:#ff4da6;
+top:8%;
+left:8%;
+animation-duration:14s;
+}
+
+.o2{
+width:220px;
+height:220px;
+background:#7c5cff;
+bottom:10%;
+right:5%;
+animation-duration:18s;
+}
+
+.o3{
+width:120px;
+height:120px;
+background:#00d4ff;
+top:60%;
+left:70%;
+animation-duration:12s;
+}
+
+@keyframes orbMove{
+
+0%{
+transform:translate(0,0) scale(1);
+}
+
+100%{
+transform:translate(60px,-40px) scale(1.25);
+}
+
+}
+
+/* =========================
+   SPARKLES
+========================= */
+
+.sparkle{
+position:absolute;
+width:4px;
+height:4px;
+background:white;
+border-radius:50%;
+box-shadow:0 0 12px white;
+animation:sparkle 2.5s infinite alternate;
+}
+
+.sp1{top:18%;left:22%;}
+.sp2{top:35%;left:72%;animation-delay:.8s;}
+.sp3{top:62%;left:38%;animation-delay:1.4s;}
+.sp4{top:78%;left:82%;animation-delay:2s;}
+.sp5{top:28%;left:55%;animation-delay:.4s;}
+
+@keyframes sparkle{
+
+0%{
+opacity:.2;
+transform:scale(.5);
+}
+
+100%{
+opacity:1;
+transform:scale(1.8);
+}
+
+}
+
+/* =========================
+   GLASS SHINE
+========================= */
+
+.glass::before{
+content:"";
+position:absolute;
+top:-120%;
+left:-40%;
+width:60%;
+height:300%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.22),
+transparent
+);
+transform:rotate(20deg);
+animation:shine 7s infinite;
+pointer-events:none;
+}
+
+@keyframes shine{
+
+0%{
+left:-80%;
+}
+
+100%{
+left:180%;
+}
+
+}
+
+/* Better Scroll */
+html{
+scroll-behavior:smooth;
+}
+/* =========================
+   LOVE BACKGROUND EFFECT
+========================= */
+
+.sky::after{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at 15% 20%,rgba(255,120,180,.12),transparent 25%),
+radial-gradient(circle at 80% 30%,rgba(120,200,255,.10),transparent 30%),
+radial-gradient(circle at 60% 80%,rgba(180,120,255,.12),transparent 30%);
+filter:blur(60px);
+animation:skyGlow 12s ease-in-out infinite alternate;
+}
+
+@keyframes skyGlow{
+
+0%{
+transform:scale(1);
+opacity:.6;
+}
+
+100%{
+transform:scale(1.15);
+opacity:1;
+}
+
+}
+
+/* =========================
+   CARD ANIMATION
+========================= */
+
+.glass{
+
+animation:cardFloat 6s ease-in-out infinite;
+
+}
+
+@keyframes cardFloat{
+
+0%,100%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+}
+
+/* =========================
+   BUTTON RIPPLE
+========================= */
+
+button{
+overflow:hidden;
+position:relative;
+}
+
+button::before{
+
+content:"";
+
+position:absolute;
+
+width:0;
+
+height:0;
+
+left:50%;
+
+top:50%;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.3);
+
+transform:translate(-50%,-50%);
+
+transition:.6s;
+
+}
+
+button:hover::before{
+
+width:350px;
+
+height:350px;
+
+}
+
+/* =========================
+   TEXT FADE
+========================= */
+
+h1,h3,p{
+
+animation:textFade 1.5s ease;
+
+}
+
+@keyframes textFade{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+.glass{
+width:92%;
+padding:28px;
+}
+
+h1{
+font-size:52px;
+}
+
+h3{
+font-size:18px;
+}
+
+p{
+font-size:20px;
+}
+
+button{
+width:100%;
+font-size:18px;
+}
+
+.moon{
+width:90px;
+height:90px;
+right:25px;
+top:30px;
+}
+
+}
+/* ===========================
+   FINAL LOVE EFFECTS
+=========================== */
+
+/* Floating Hearts */
+
+.heart{
+position:absolute;
+bottom:-60px;
+color:#ff5fa2;
+font-size:18px;
+opacity:.6;
+animation:heartFloat linear infinite;
+pointer-events:none;
+}
+
+.h1{left:5%;animation-duration:12s;}
+.h2{left:15%;animation-duration:10s;animation-delay:2s;}
+.h3{left:28%;animation-duration:13s;animation-delay:5s;}
+.h4{left:40%;animation-duration:11s;animation-delay:1s;}
+.h5{left:55%;animation-duration:15s;animation-delay:4s;}
+.h6{left:68%;animation-duration:12s;animation-delay:6s;}
+.h7{left:82%;animation-duration:10s;animation-delay:3s;}
+.h8{left:94%;animation-duration:14s;animation-delay:7s;}
+
+@keyframes heartFloat{
+
+0%{
+transform:translateY(0) scale(.7) rotate(0deg);
+opacity:0;
+}
+
+20%{
+opacity:.8;
+}
+
+100%{
+transform:translateY(-120vh) scale(1.5) rotate(360deg);
+opacity:0;
+}
+
+}
+
+/* Glass Hover */
+
+.glass:hover{
+
+transform:translateY(-10px) scale(1.02);
+
+transition:.5s;
+
+box-shadow:
+0 25px 80px rgba(255,255,255,.12),
+0 20px 60px rgba(0,0,0,.45);
+
+}
+
+/* Title Animation */
+
+h1{
+
+animation:titleGlow 3s infinite alternate;
+
+}
+
+@keyframes titleGlow{
+
+from{
+
+text-shadow:
+0 0 10px white,
+0 0 20px #ff7ac2;
+
+}
+
+to{
+
+text-shadow:
+0 0 20px white,
+0 0 45px #ff3d96,
+0 0 80px #ff3d96;
+
+}
+
+}
+
+/* Paragraph */
+
+p{
+
+animation:fadeText 1.5s ease;
+
+}
+
+@keyframes fadeText{
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/* Footer */
+
+.footer{
+
+opacity:.85;
+
+letter-spacing:4px;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+width:6px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#ff6fae;
+
+border-radius:10px;
+
+}
