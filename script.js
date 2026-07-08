@@ -2,6 +2,8 @@ function nextPage() {
 
 document.querySelector(".glass").innerHTML = `
 
+<div class="letter-page">
+
 <h1>💌 Dear Sneha...</h1>
 
 <p>
@@ -24,6 +26,8 @@ meri baat tum tak ek yaadgar tareeke se pahunchni chahiye. ❤️
 Continue ❤️
 </button>
 
+</div>
+
 `;
 
 }
@@ -33,6 +37,8 @@ Continue ❤️
 function proposal(){
 
 document.querySelector(".glass").innerHTML = `
+
+<div class="letter-page">
 
 <h1>🌸 A Little More...</h1>
 
@@ -60,6 +66,7 @@ One Last Thing 💖
 
 </button>
 
+</div>
 
 `;
 
@@ -71,6 +78,7 @@ function finalProposal(){
 
 document.querySelector(".glass").innerHTML = `
 
+<div class="letter-page">
 
 <h1>🌹 Dear Sneha ❤️</h1>
 
@@ -96,19 +104,21 @@ Toh kya tum mere saath ek nayi shuruaat karna pasand karogi?
 
 
 
+<div class="choice-buttons">
+
 <button onclick="yesAnswer()">
-
 ❤️ Yes
-
 </button>
 
 
 <button onclick="needTime()">
-
 🤍 Need Some Time
-
 </button>
 
+</div>
+
+
+</div>
 
 `;
 
@@ -119,6 +129,8 @@ Toh kya tum mere saath ek nayi shuruaat karna pasand karogi?
 function yesAnswer(){
 
 document.querySelector(".glass").innerHTML = `
+
+<div class="letter-page">
 
 <h1>🥹❤️</h1>
 
@@ -135,6 +147,7 @@ Tumhara answer mere liye bahut special hai.
 
 </p>
 
+
 <a href="https://instagram.com/lucidrush4199" target="_blank">
 
 <button>
@@ -142,6 +155,9 @@ Chat With Me 💌
 </button>
 
 </a>
+
+
+</div>
 
 `;
 
@@ -152,6 +168,8 @@ Chat With Me 💌
 function needTime(){
 
 document.querySelector(".glass").innerHTML = `
+
+<div class="letter-page">
 
 <h1>😊 It's Okay</h1>
 
@@ -177,6 +195,8 @@ Talk With Me 💌
 
 </a>
 
+
+</div>
 
 `;
 
