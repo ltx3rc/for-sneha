@@ -1,152 +1,311 @@
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+/* ===========================
+   PART 1 - REAL NIGHT SKY
+=========================== */
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    overflow:hidden;
-    background:linear-gradient(-45deg,#ff4d8d,#ff6fb5,#8b5cf6,#4f46e5,#3b82f6,#ff85c2);
-    background-size:600% 600%;
-    animation:aurora 15s ease infinite;
-    font-family:'Cormorant Garamond',serif;
-    position:relative;
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#06142c;
+font-family:'Cormorant Garamond',serif;
+position:relative;
 }
 
-@keyframes aurora{
-    0%{background-position:0% 50%;}
-    25%{background-position:100% 50%;}
-    50%{background-position:100% 100%;}
-    75%{background-position:0% 100%;}
-    100%{background-position:0% 50%;}
+/* SKY */
+
+.sky{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+background:
+radial-gradient(circle at top,#163b72 0%,#0d2147 35%,#071225 70%,#02060f 100%);
+z-index:-5;
 }
 
-body::before{
-    content:"";
-    position:absolute;
-    width:200%;
-    height:200%;
-    background:
-    radial-gradient(circle,rgba(255,255,255,.18) 2px,transparent 2px);
-    background-size:70px 70px;
-    animation:stars 50s linear infinite;
-    opacity:.45;
+/* MOON */
+
+.moon{
+position:absolute;
+top:70px;
+right:90px;
+width:140px;
+height:140px;
+border-radius:50%;
+background:#fffde7;
+box-shadow:
+0 0 30px #fff,
+0 0 80px rgba(255,255,255,.8),
+0 0 150px rgba(255,255,255,.4);
 }
 
-@keyframes stars{
-    from{
-        transform:translateY(0);
-    }
-    to{
-        transform:translateY(-500px);
-    }
+/* STARS */
+
+.stars{
+position:absolute;
+width:100%;
+height:100%;
+background-image:
+radial-gradient(white 1px,transparent 1px);
+background-size:40px 40px;
+opacity:.35;
+animation:twinkle 4s infinite alternate;
 }
+
+@keyframes twinkle{
+
+0%{
+opacity:.2;
+}
+
+100%{
+opacity:.8;
+}
+
+}
+
+/* CLOUDS */
+
+.cloud{
+position:absolute;
+background:rgba(255,255,255,.12);
+filter:blur(25px);
+border-radius:100px;
+}
+
+.cloud1{
+width:320px;
+height:90px;
+top:120px;
+left:-350px;
+animation:cloudMove1 40s linear infinite;
+}
+
+.cloud2{
+width:260px;
+height:70px;
+top:250px;
+left:-280px;
+animation:cloudMove2 55s linear infinite;
+}
+
+@keyframes cloudMove1{
+
+from{
+transform:translateX(0);
+}
+
+to{
+transform:translateX(1800px);
+}
+
+}
+
+@keyframes cloudMove2{
+
+from{
+transform:translateX(0);
+}
+
+to{
+transform:translateX(2000px);
+}
+
+}
+
+/* GLASS CARD */
 
 .container{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-    z-index:2;
+position:relative;
+z-index:5;
+display:flex;
+justify-content:center;
+align-items:center;
+width:100%;
+padding:20px;
 }
 
 .glass{
-    width:90%;
-    max-width:650px;
-    padding:45px;
-    border-radius:30px;
-    background:rgba(255,255,255,.12);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,.25);
-    box-shadow:0 20px 60px rgba(0,0,0,.35);
-    text-align:center;
-    animation:fadeUp 1.2s ease;
+
+width:90%;
+max-width:650px;
+
+padding:45px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.2);
+
+box-shadow:0 20px 60px rgba(0,0,0,.5);
+
+text-align:center;
+
 }
 
-@keyframes fadeUp{
-    from{
-        transform:translateY(40px);
-        opacity:0;
-    }
-    to{
-        transform:translateY(0);
-        opacity:1;
-    }
+/* TEXT */
+
+h1{
+
+font-family:'Parisienne',cursive;
+
+font-size:72px;
+
+color:white;
+
+margin-bottom:20px;
+
 }
 
 h3{
-    font-family:'Cinzel',serif;
-    letter-spacing:4px;
-    color:#ffe9f5;
-    margin-bottom:15px;
-}
 
-h1{
-    font-family:'Parisienne',cursive;
-    font-size:75px;
-    color:white;
-    margin-bottom:25px;
-    text-shadow:0 0 25px rgba(255,255,255,.6);
+font-family:'Cinzel',serif;
+
+color:#ffe8f5;
+
+letter-spacing:4px;
+
+margin-bottom:15px;
+
 }
 
 p{
-    font-size:25px;
-    color:white;
-    line-height:1.8;
-    margin-bottom:25px;
+
+font-size:24px;
+
+line-height:1.8;
+
+color:white;
+
+margin-bottom:25px;
+
 }
 
 button{
-    padding:16px 45px;
-    border:none;
-    border-radius:50px;
-    cursor:pointer;
-    font-family:'Cinzel',serif;
-    font-size:18px;
-    color:#d63384;
-    background:white;
-    transition:.35s;
+
+padding:16px 45px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:18px;
+
+cursor:pointer;
+
+background:#ff4f93;
+
+color:white;
+
+transition:.35s;
+
 }
 
 button:hover{
-    transform:scale(1.08);
-    box-shadow:0 15px 40px rgba(255,255,255,.45);
+
+transform:scale(1.07);
+
+background:#ff2b7a;
+
 }
 
 .footer{
-    position:absolute;
-    bottom:18px;
-    width:100%;
-    text-align:center;
-    color:white;
-    font-family:'Cinzel',serif;
-    letter-spacing:3px;
-    z-index:2;
-}
 
-@media(max-width:768px){
+position:absolute;
 
-h1{
-font-size:55px;
-}
+bottom:18px;
 
-p{
-font-size:20px;
-}
-
-.glass{
-padding:30px;
-}
-
-button{
 width:100%;
+
+text-align:center;
+
+color:white;
+
+font-family:'Cinzel',serif;
+
+letter-spacing:3px;
+
+z-index:10;
+
+}
+/* Moon Glow */
+.moon::after{
+content:"";
+position:absolute;
+top:-60px;
+left:-60px;
+width:260px;
+height:260px;
+border-radius:50%;
+background:radial-gradient(circle,rgba(255,255,255,.25),transparent 70%);
+animation:moonGlow 4s ease-in-out infinite alternate;
+pointer-events:none;
 }
 
+@keyframes moonGlow{
+0%{transform:scale(1);opacity:.5;}
+100%{transform:scale(1.2);opacity:1;}
+}
+
+/* Shooting Stars */
+
+.shooting-star{
+position:absolute;
+width:3px;
+height:120px;
+background:linear-gradient(to bottom,white,transparent);
+transform:rotate(45deg);
+filter:drop-shadow(0 0 8px white);
+opacity:0;
+}
+
+.s1{
+top:8%;
+left:15%;
+animation:shoot1 6s linear infinite;
+}
+
+.s2{
+top:18%;
+left:60%;
+animation:shoot2 8s linear infinite;
+animation-delay:2s;
+}
+
+.s3{
+top:30%;
+left:35%;
+animation:shoot3 7s linear infinite;
+animation-delay:4s;
+}
+
+@keyframes shoot1{
+0%{transform:translate(0,0) rotate(45deg);opacity:0;}
+10%{opacity:1;}
+100%{transform:translate(900px,900px) rotate(45deg);opacity:0;}
+}
+
+@keyframes shoot2{
+0%{transform:translate(0,0) rotate(45deg);opacity:0;}
+10%{opacity:1;}
+100%{transform:translate(1000px,1000px) rotate(45deg);opacity:0;}
+}
+
+@keyframes shoot3{
+0%{transform:translate(0,0) rotate(45deg);opacity:0;}
+10%{opacity:1;}
+100%{transform:translate(800px,800px) rotate(45deg);opacity:0;}
 }
