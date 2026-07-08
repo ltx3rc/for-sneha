@@ -39,6 +39,7 @@ Continue ❤️
 
 
 
+
 function proposal(){
 
 document.querySelector(".glass").innerHTML = `
@@ -88,7 +89,6 @@ document.querySelector(".glass").innerHTML = `
 
 <div class="letter-page">
 
-
 <h1>🌹 Dear Sneha ❤️</h1>
 
 
@@ -115,6 +115,7 @@ Toh kya tum mere saath ek nayi shuruaat karna pasand karogi?
 
 <div class="choice-buttons">
 
+
 <button onclick="yesAnswer()">
 
 ❤️ Yes
@@ -122,11 +123,41 @@ Toh kya tum mere saath ek nayi shuruaat karna pasand karogi?
 </button>
 
 
+
 <button onclick="needTime()">
 
 🤍 Need Some Time
 
 </button>
+
+
+
+<p style="margin-top:25px;">
+
+Instagram pe bata do
+
+</p>
+
+
+
+<a href="https://ig.me/m/lucidrush4199" target="_blank">
+
+<button>
+
+Instagram 💌
+
+</button>
+
+</a>
+
+
+
+<p style="margin-top:20px;font-size:16px;opacity:.8;">
+
+Madam Ji, aapko takleef ho isi liye ye button diya hai 🥀
+
+</p>
+
 
 
 </div>
@@ -160,8 +191,6 @@ document.querySelector(".glass").innerHTML = `
 Tumhara answer mere liye bahut special hai.
 
 <br><br>
-
-Mujhe khushi hai ki tumne apni feelings share ki.
 
 ❤️
 
