@@ -1,15 +1,22 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+*{
     margin:0;
     padding:0;
+    box-sizing:border-box;
+}
+
+body{
     height:100vh;
-    overflow:hidden;
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(-45deg,#ff4d8d,#8b5cf6,#3b82f6,#ff85c2,#5b21b6);
-    background-size:500% 500%;
+    overflow:hidden;
+    background:linear-gradient(-45deg,#ff4d8d,#ff6fb5,#8b5cf6,#4f46e5,#3b82f6,#ff85c2);
+    background-size:600% 600%;
     animation:aurora 15s ease infinite;
     font-family:'Cormorant Garamond',serif;
+    position:relative;
 }
 
 @keyframes aurora{
@@ -18,4 +25,128 @@ body{
     50%{background-position:100% 100%;}
     75%{background-position:0% 100%;}
     100%{background-position:0% 50%;}
+}
+
+body::before{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    background:
+    radial-gradient(circle,rgba(255,255,255,.18) 2px,transparent 2px);
+    background-size:70px 70px;
+    animation:stars 50s linear infinite;
+    opacity:.45;
+}
+
+@keyframes stars{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-500px);
+    }
+}
+
+.container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    z-index:2;
+}
+
+.glass{
+    width:90%;
+    max-width:650px;
+    padding:45px;
+    border-radius:30px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.25);
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+    text-align:center;
+    animation:fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        transform:translateY(40px);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+h3{
+    font-family:'Cinzel',serif;
+    letter-spacing:4px;
+    color:#ffe9f5;
+    margin-bottom:15px;
+}
+
+h1{
+    font-family:'Parisienne',cursive;
+    font-size:75px;
+    color:white;
+    margin-bottom:25px;
+    text-shadow:0 0 25px rgba(255,255,255,.6);
+}
+
+p{
+    font-size:25px;
+    color:white;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+button{
+    padding:16px 45px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    font-family:'Cinzel',serif;
+    font-size:18px;
+    color:#d63384;
+    background:white;
+    transition:.35s;
+}
+
+button:hover{
+    transform:scale(1.08);
+    box-shadow:0 15px 40px rgba(255,255,255,.45);
+}
+
+.footer{
+    position:absolute;
+    bottom:18px;
+    width:100%;
+    text-align:center;
+    color:white;
+    font-family:'Cinzel',serif;
+    letter-spacing:3px;
+    z-index:2;
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:55px;
+}
+
+p{
+font-size:20px;
+}
+
+.glass{
+padding:30px;
+}
+
+button{
+width:100%;
+}
+
 }
