@@ -7,8 +7,10 @@ document.querySelector(".glass").innerHTML = `
 <h1>💌 Dear Sneha...</h1>
 
 <p>
+
 Shayad tum soch rahi hogi...
 ki kisi ne website bana kar apni feelings kyu batayi.
+
 <br><br>
 
 Sach kahu toh...
@@ -23,8 +25,11 @@ meri baat tum tak ek yaadgar tareeke se pahunchni chahiye. ❤️
 
 
 <button onclick="proposal()">
+
 Continue ❤️
+
 </button>
+
 
 </div>
 
@@ -66,6 +71,7 @@ One Last Thing 💖
 
 </button>
 
+
 </div>
 
 `;
@@ -74,11 +80,14 @@ One Last Thing 💖
 
 
 
+
+
 function finalProposal(){
 
 document.querySelector(".glass").innerHTML = `
 
 <div class="letter-page">
+
 
 <h1>🌹 Dear Sneha ❤️</h1>
 
@@ -107,13 +116,18 @@ Toh kya tum mere saath ek nayi shuruaat karna pasand karogi?
 <div class="choice-buttons">
 
 <button onclick="yesAnswer()">
+
 ❤️ Yes
+
 </button>
 
 
 <button onclick="needTime()">
+
 🤍 Need Some Time
+
 </button>
+
 
 </div>
 
@@ -126,13 +140,17 @@ Toh kya tum mere saath ek nayi shuruaat karna pasand karogi?
 
 
 
+
+
 function yesAnswer(){
 
 document.querySelector(".glass").innerHTML = `
 
 <div class="letter-page">
 
+
 <h1>🥹❤️</h1>
+
 
 <h2>Thank You, Sneha ❤️</h2>
 
@@ -143,18 +161,24 @@ Tumhara answer mere liye bahut special hai.
 
 <br><br>
 
+Mujhe khushi hai ki tumne apni feelings share ki.
+
 ❤️
 
 </p>
 
 
-<a href="https://instagram.com/lucidrush4199" target="_blank">
+
+<a href="https://ig.me/m/lucidrush4199" target="_blank">
 
 <button>
-Chat With Me 💌
+
+Chat With Me On Instagram 💌
+
 </button>
 
 </a>
+
 
 
 </div>
@@ -165,11 +189,14 @@ Chat With Me 💌
 
 
 
+
+
 function needTime(){
 
 document.querySelector(".glass").innerHTML = `
 
 <div class="letter-page">
+
 
 <h1>😊 It's Okay</h1>
 
@@ -187,13 +214,17 @@ Jitna time chahiye, aaram se le sakti ho.
 </p>
 
 
-<a href="https://instagram.com/lucidrush4199" target="_blank">
+
+<a href="https://ig.me/m/lucidrush4199" target="_blank">
 
 <button>
+
 Talk With Me 💌
+
 </button>
 
 </a>
+
 
 
 </div>
