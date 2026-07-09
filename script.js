@@ -1,5 +1,5 @@
 function playMusic() {
-    alert("Button Click Hua!");
+    a);
 
     const music = document.getElementById("bgMusic");
 
