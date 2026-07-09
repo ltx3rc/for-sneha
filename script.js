@@ -1,3 +1,12 @@
+function playMusic() {
+    const music = document.getElementById("bgMusic");
+    if (music) {
+        music.volume = 0.3;
+        music.play().catch(err => console.log(err));
+    }
+
+    nextPage();   // Music ke baad next page bhi open hoga
+}
 document.addEventListener("DOMContentLoaded", () => {
     const music = document.getElementById("bgMusic");
 
