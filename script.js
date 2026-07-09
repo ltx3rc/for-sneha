@@ -1,11 +1,14 @@
 function playMusic() {
+    alert("Button Click Hua!");
+
     const music = document.getElementById("bgMusic");
+
     if (music) {
         music.volume = 0.3;
         music.play().catch(err => console.log(err));
     }
 
-    nextPage()
+    nextPage();
 }
 
 function nextPage() {
