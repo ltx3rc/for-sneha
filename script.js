@@ -5,15 +5,9 @@ function playMusic() {
         music.play().catch(err => console.log(err));
     }
 
-    nextPage();   // Music ke baad next page bhi open hoga
+    nextPage()
 }
-document.addEventListener("DOMContentLoaded", () => {
-    const music = document.getElementById("bgMusic");
 
-    document.body.addEventListener("click", () => {
-        music.play().catch(console.error);
-    }, { once: true });
-});
 function nextPage() {
 
 document.querySelector(".glass").innerHTML = `
